@@ -16,13 +16,6 @@ html
       section
         .avatars
           img.avatar(src='images/profile.jpg')
-          img.avatar(src='images/glenmaddern.jpg')
-      
-      section(data-bespoke-backdrop='lego')
-        h1(style='line-height:100px') CSS in the<br>Component Age
-      
-      section
-        h3 &mdash; Part I &mdash;
 
       section(data-bespoke-backdrop='space')
         h2 The End
@@ -89,6 +82,13 @@ html
             &lt;/div&gt;
 
       section
+        h3 CSS at scale feels
+        h2 Completely different
+
+      section
+        h3(style='font-size: 40px') &ldquo;How do we scale interfaces better?&rdquo;
+
+      section(data-bespoke-backdrop='lego')
         h2 The Age
         h3 &mdash; of &mdash;
         h2 Components
@@ -320,7 +320,7 @@ html
                     .component
       
       section
-        h3 Meanwhile&hellip;
+        h3(style='font-size: 50px') Meanwhile&hellip;
 
       section
         .webpack-logo
@@ -442,7 +442,12 @@ html
 
       section
         h2 postcss-local-scope
-        h3 &mdash; Turned .class into :local(.class) &mdash;
+        h3 &mdash; Turned .class into :local(.class), :global(.class) into .class &mdash;
+
+      section(data-bespoke-backdrop='space')
+        h2 The End
+        h3 &mdash; of &mdash;
+        h2 Global CSS
 
       section
         h3(style='width: 600px') &ldquo;I hope it&rsquo;s ok if I integrate your postcss-local-scope module into the css-loader&rdquo;
@@ -452,7 +457,73 @@ html
         h3(style='font-size: 50px') &lsquo;css-loader?module&rsquo;
 
       section
-        h3(style='width: 700px') &ldquo;Have you thought about writing a standard for CSS modules that others could implement? What you&rsquo;re doing could totally fix the CSS ecosystem if it&rsquo;s widely adopted.&rdquo;
+        h3(style='width: 650px') &ldquo;In the future, we could start generating shared classes between components automatically, treating style re-use as an optimisation at compile time.&rdquo;
+
+      section
+        h3(style='width: 600px; text-align: left') One-to-one mapping
+        pre.language-javascript(style='width: 600px')
+          code.
+            {
+              'foo': 'MyComponent__foo'
+            }
+
+      section
+        h3(style='width: 600px; text-align: left') One-to-many mapping?
+        pre.language-javascript(style='width: 600px')
+          code.
+            {
+              'foo': 'class_1 class_2 class_3'
+            }
+
+      section
+        .webpack-logo
+          .logo
+            .cube-inner
+              span.front
+              span.back
+              span.right
+              span.left
+              span.top
+              span.bottom
+            .cube
+              span.front
+              span.back
+              span.right
+              span.left
+              span.top
+              span.bottom
+              span.floor
+        h1 Composition
+
+      section
+        pre.language-javascript
+          code.
+            .foo {
+              composes: heading from './typography.css';
+              composes: box from './layout.css';
+              color: red;
+            }
+
+      section
+        pre.language-css
+          code.
+            /* typography.css */
+            .heading { ... }
+
+            /* layout.css */
+            .box { ... }
+
+      section
+        pre.language-javascript
+          code.
+            {
+              'foo': `MyComponent__foo
+                      Typography__heading
+                      Layout__box`
+            }
+
+      section
+        h3(style='width: 700px') &ldquo;Have you thought about writing a standard for CSS modules that others could implement?&rdquo;
         h4 @markdalgleish &mdash; May 23, 2015
 
       section(data-bespoke-backdrop='initial-commit')
@@ -498,11 +569,34 @@ html
           li JSPM
           li Your build tool?
       
-      section
-        img.avatar(src='images/profile.jpg')
+      section(data-bespoke-backdrop='maze')
+        h3(style='font-size: 50px') &ldquo;This looks complicated&hellip;&rdquo;
 
       section
-        img.avatar(src='images/glenmaddern.jpg')
-        h3 &mdash; Part II &mdash;
+        h3
+          .bespoke-bullet-active.show
+            .bespoke-bullet-active.show.show-css-and-js
+              .bespoke-bullet-active.show.show-component
+                  .circles
+                    .css
+                    .js
+                    .component
+
+      section(data-bespoke-backdrop='mini-zen-garden')
+        h3 Each component is a miniature
+        h2 CSS Zen Garden
+
+      section
+        h2 Smarter tools
+        h3 &mdash; not &mdash;
+        h2 Stricter methodologies
+
+      section
+        h2 Let&rsquo;s make Big CSS
+        h3 &mdash; feel like &mdash;
+        h2 Small CSS
+
+      section
+        img.avatar(src='images/profile.jpg')
 
     script(src='build/build.js')
