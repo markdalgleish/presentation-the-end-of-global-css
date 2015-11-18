@@ -272,10 +272,27 @@ html
         h2 A block
         h3 &mdash; is &mdash;
         h2 a component
-      
+
       section(style='font-size: 40px')
         h3 &ldquo;Never use a block outside<br>a component of the same name&rdquo;
-      
+
+      section
+        pre.language-javascript
+          code.
+            components/
+              MyComponent/
+                MyComponent.js
+                MyComponent.css
+                icon.svg
+
+      section
+        pre.language-css
+          code.
+            .MyComponent__foo { ... }
+
+            .MyComponent__bar { ... }
+            .MyComponent__bar--expanded { ... }
+
       section
         h3
           .bullet.show
@@ -318,7 +335,10 @@ html
                     .css
                     .js
                     .component
-      
+
+      section(data-bespoke-backdrop='legobricks')
+        h3(style='width: 800px; font-size: 60px; line-height: 80px') &ldquo;Block, Element, Modifying Your JavaScript Components&rdquo;
+
       section
         h3(style='font-size: 50px') Meanwhile&hellip;
 
