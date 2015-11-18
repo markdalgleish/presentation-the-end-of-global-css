@@ -10,13 +10,7 @@
     <article>
       <section></section>
       <section>
-        <div class="avatars"><img src="images/profile.jpg" class="avatar"><img src="images/glenmaddern.jpg" class="avatar"></div>
-      </section>
-      <section data-bespoke-backdrop="lego">
-        <h1 style="line-height:100px">CSS in the<br>Component Age</h1>
-      </section>
-      <section>
-        <h3>&mdash; Part I &mdash;</h3>
+        <div class="avatars"><img src="images/profile.jpg" class="avatar"></div>
       </section>
       <section data-bespoke-backdrop="space">
         <h2>The End</h2>
@@ -75,6 +69,13 @@
 </code></pre>
       </section>
       <section>
+        <h3>CSS at scale feels</h3>
+        <h2>Completely different</h2>
+      </section>
+      <section>
+        <h3 style="font-size: 40px">&ldquo;How do we scale interfaces better?&rdquo;</h3>
+      </section>
+      <section data-bespoke-backdrop="lego">
         <h2>The Age</h2>
         <h3>&mdash; of &mdash;</h3>
         <h2>Components</h2>
@@ -300,7 +301,7 @@ export default () => &lt;MyComponent /&gt;;
         </h3>
       </section>
       <section>
-        <h3>Meanwhile&hellip;</h3>
+        <h3 style="font-size: 50px">Meanwhile&hellip;</h3>
       </section>
       <section>
         <div class="webpack-logo">
@@ -399,7 +400,12 @@ export default () => (
       </section>
       <section>
         <h2>postcss-local-scope</h2>
-        <h3>&mdash; Turned .class into :local(.class) &mdash;</h3>
+        <h3>&mdash; Turned .class into :local(.class), :global(.class) into .class &mdash;</h3>
+      </section>
+      <section data-bespoke-backdrop="space">
+        <h2>The End</h2>
+        <h3>&mdash; of &mdash;</h3>
+        <h2>Global CSS</h2>
       </section>
       <section>
         <h3 style="width: 600px">&ldquo;I hope it&rsquo;s ok if I integrate your postcss-local-scope module into the css-loader&rdquo;</h3>
@@ -409,7 +415,57 @@ export default () => (
         <h3 style="font-size: 50px">&lsquo;css-loader?module&rsquo;</h3>
       </section>
       <section>
-        <h3 style="width: 700px">&ldquo;Have you thought about writing a standard for CSS modules that others could implement? What you&rsquo;re doing could totally fix the CSS ecosystem if it&rsquo;s widely adopted.&rdquo;</h3>
+        <h3 style="width: 650px">&ldquo;In the future, we could start generating shared classes between components automatically, treating style re-use as an optimisation at compile time.&rdquo;</h3>
+      </section>
+      <section>
+        <h3 style="width: 600px; text-align: left">One-to-one mapping</h3>
+        <pre style="width: 600px" class="language-javascript"><code>{
+  'foo': 'MyComponent__foo'
+}
+</code></pre>
+      </section>
+      <section>
+        <h3 style="width: 600px; text-align: left">One-to-many mapping?</h3>
+        <pre style="width: 600px" class="language-javascript"><code>{
+  'foo': 'class_1 class_2 class_3'
+}
+</code></pre>
+      </section>
+      <section>
+        <div class="webpack-logo">
+          <div class="logo">
+            <div class="cube-inner"><span class="front"></span><span class="back"></span><span class="right"></span><span class="left"></span><span class="top"></span><span class="bottom"></span></div>
+            <div class="cube"><span class="front"></span><span class="back"></span><span class="right"></span><span class="left"></span><span class="top"></span><span class="bottom"></span><span class="floor"></span></div>
+          </div>
+        </div>
+        <h1>Composition</h1>
+      </section>
+      <section>
+        <pre class="language-javascript"><code>.foo {
+  composes: heading from './typography.css';
+  composes: box from './layout.css';
+  color: red;
+}
+</code></pre>
+      </section>
+      <section>
+        <pre class="language-css"><code>/* typography.css */
+.heading { ... }
+
+/* layout.css */
+.box { ... }
+</code></pre>
+      </section>
+      <section>
+        <pre class="language-javascript"><code>{
+  'foo': `MyComponent__foo
+          Typography__heading
+          Layout__box`
+}
+</code></pre>
+      </section>
+      <section>
+        <h3 style="width: 700px">&ldquo;Have you thought about writing a standard for CSS modules that others could implement?&rdquo;</h3>
         <h4>@markdalgleish &mdash; May 23, 2015</h4>
       </section>
       <section data-bespoke-backdrop="initial-commit"></section>
@@ -449,10 +505,39 @@ export default () => (
           <li>Your build tool?</li>
         </ul>
       </section>
-      <section><img src="images/profile.jpg" class="avatar"></section>
-      <section><img src="images/glenmaddern.jpg" class="avatar">
-        <h3>&mdash; Part II &mdash;</h3>
+      <section data-bespoke-backdrop="maze">
+        <h3 style="font-size: 50px">&ldquo;This looks complicated&hellip;&rdquo;</h3>
       </section>
+      <section>
+        <h3>
+          <div class="bespoke-bullet-active show">
+            <div class="bespoke-bullet-active show show-css-and-js">
+              <div class="bespoke-bullet-active show show-component">
+                <div class="circles">
+                  <div class="css"></div>
+                  <div class="js"></div>
+                  <div class="component"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </h3>
+      </section>
+      <section data-bespoke-backdrop="mini-zen-garden">
+        <h3>Each component is a miniature</h3>
+        <h2>CSS Zen Garden</h2>
+      </section>
+      <section>
+        <h2>Smarter tools</h2>
+        <h3>&mdash; not &mdash;</h3>
+        <h2>Stricter methodologies</h2>
+      </section>
+      <section>
+        <h2>Let&rsquo;s make Big CSS</h2>
+        <h3>&mdash; feel like &mdash;</h3>
+        <h2>Small CSS</h2>
+      </section>
+      <section><img src="images/profile.jpg" class="avatar"></section>
     </article>
     <script src="build/build.js"></script>
   </body>
