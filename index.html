@@ -244,6 +244,21 @@ export default () => &lt;MyComponent /&gt;;
         <h3>&ldquo;Never use a block outside<br>a component of the same name&rdquo;</h3>
       </section>
       <section>
+        <pre class="language-javascript"><code>components/
+  MyComponent/
+    MyComponent.js
+    MyComponent.css
+    icon.svg
+    </code></pre>
+      </section>
+      <section>
+        <pre class="language-css"><code>.MyComponent__foo { ... }
+
+.MyComponent__bar { ... }
+.MyComponent__bar--expanded { ... }
+</code></pre>
+      </section>
+      <section>
         <h3>
           <div class="bullet show">
             <div class="bullet show show-css-and-js">
@@ -299,6 +314,9 @@ export default () => &lt;MyComponent /&gt;;
             </div>
           </div>
         </h3>
+      </section>
+      <section data-bespoke-backdrop="legobricks">
+        <h3 style="width: 800px; font-size: 60px; line-height: 80px">&ldquo;Block, Element, Modifying Your JavaScript Components&rdquo;</h3>
       </section>
       <section>
         <h3 style="font-size: 50px">Meanwhile&hellip;</h3>
